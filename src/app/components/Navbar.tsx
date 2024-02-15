@@ -3,6 +3,8 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import { cookies } from "next/headers";
 import { Icons } from "./Icons";
 import NavItems from "./NavItems";
+import { buttonVariants } from "./ui/button";
+import Cart from "../Cart";
 // import { buttonVariants } from "./ui/button";
 // import Cart from "./Cart";
 // import { getServerSideUser } from "@/lib/payload-utils";
@@ -12,7 +14,8 @@ import NavItems from "./NavItems";
 
 const Navbar = async () => {
   const nextCookies = cookies();
-//   const { user } = await getServerSideUser(nextCookies);
+  const user = null;
+  //   const { user } = await getServerSideUser(nextCookies);
 
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
@@ -33,7 +36,7 @@ const Navbar = async () => {
               </div>
 
               <div className="ml-auto flex items-center">
-                {/* <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   {user ? null : (
                     <Link
                       href="/sign-in"
@@ -49,9 +52,8 @@ const Navbar = async () => {
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   )}
 
-                  {user ? (
-                    <UserAccountNav user={user} />
-                  ) : (
+                  {user ? null : (
+                    // <UserAccountNav user={user} />
                     <Link
                       href="/sign-up"
                       className={buttonVariants({
@@ -74,13 +76,14 @@ const Navbar = async () => {
                       />
                     </div>
                   )}
+                  
 
                   <div className="ml-4 flow-root lg:ml-6">
                     <Cart />
                   </div>
-                </div> */}
-              </div> 
-            </div> 
+                </div>
+              </div>
+            </div>
           </div>
         </MaxWidthWrapper>
       </header>

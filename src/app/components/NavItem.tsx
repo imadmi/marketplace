@@ -66,6 +66,7 @@ const NavItem = ({
                           src={item.imageSrc}
                           alt="product category image"
                           fill
+                          sizes="100% 100%"
                           className="object-cover object-center"
                         />
                       </div>
